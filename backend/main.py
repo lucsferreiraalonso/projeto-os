@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import create_db_and_tables
+from routes_clientes import router as clientes_router # Importa o router
 
 app = FastAPI()
 
@@ -12,6 +13,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Registra as rotas
+app.include_router(clientes_router)
 
 @app.on_event("startup")
 def on_startup():

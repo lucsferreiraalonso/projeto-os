@@ -1,4 +1,6 @@
 from sqlmodel import SQLModel, create_engine, Session
+# Importe os modelos aqui para que o SQLModel saiba criá-los
+from models import Cliente, Tecnico, OrdemServico
 
 # O arquivo do banco ficará na pasta 'data' que mapeamos no Docker
 sqlite_file_name = "/app/data/banco_os.db"
