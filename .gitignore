@@ -14,3 +14,5 @@ __pycache__/
 # Frontend (Preparação para o futuro)
 node_modules/
 dist/
+
+bkp/
