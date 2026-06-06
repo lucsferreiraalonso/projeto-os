@@ -1,0 +1,22 @@
+services:
+  # Backend Python (FastAPI)
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+    ports:
+      - "8000:8000"
+    command: uvicorn main:app --reload --host 0.0.0.0
+
+  # Frontend React (Vite)
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - WATCHPACK_POLLING=true
+    command: npm run dev -- --host 0.0.0.0

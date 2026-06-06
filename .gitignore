@@ -1,0 +1,16 @@
+# Banco de dados
+data/
+*.db
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Variáveis de Ambiente
+.env
+
+# Frontend (Preparação para o futuro)
+node_modules/
+dist/
